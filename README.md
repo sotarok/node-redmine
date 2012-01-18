@@ -1,6 +1,8 @@
 node-redmine
 ===============
 
+[![Build Status](https://secure.travis-ci.org/sotarok/node-redmine.png)](http://travis-ci.org/sotarok/node-redmine)
+
 Redmine REST API Client for node.js
 
 
@@ -15,7 +17,9 @@ Features
 Install
 ---------
 
-  $ npm install redmine
+Install from npm:
+
+    $ npm install redmine
 
 
 Link

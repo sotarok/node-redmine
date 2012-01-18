@@ -1,6 +1,6 @@
 {
   "name": "redmine",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Redmine Rest API Client for node.js",
   "tags": ["redmine"],
   "author": "Sotaro KARASAWA <sotarok@crocos.co.jp>",

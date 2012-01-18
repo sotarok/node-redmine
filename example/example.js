@@ -30,12 +30,12 @@ redmine.postIssue(issue, function(err, data) {
     return;
   }
 
-  console.log(data == JSON.stringify({issue: issue}));
+  console.log(data);
 });
 
 
 // update issue
-var issueId = 4;
+var issueId = 4; // exist id
 var issueUpdate = {
   notes: "this is comment"
 };
