@@ -75,5 +75,9 @@ module.exports = {
     var converted = Redmine.JSONStringify(hoge);
     assert.equal(converted, '{"hoge":"JSON with \\u65e5\\u672c\\u8a9e"}');
     assert.eql(JSON.parse(converted), hoge); // invertible
+
+    var hoge = {hoge: 'JSON with \n \r \b \\ \f \t '};
+    var converted = Redmine.JSONStringify(hoge);
+    assert.equal(converted, '{"hoge":"JSON with \\n \\r \\b \\\\ \\f \\t "}');
   }
 };
