@@ -1,6 +1,9 @@
 CHANGES
 =========
 
+0.2.2
+-------
+- Fixed bug of escaping JSON string.
 
 0.2.1
 -------
