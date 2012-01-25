@@ -1,5 +1,6 @@
 var path = require('path');
 var assert = require('assert');
+var util = require('util');
 
 var basedir = path.join(__dirname, '..');
 var libdir = path.join(basedir, 'lib');
@@ -60,5 +61,19 @@ module.exports = {
       assert.isNull(err, 'Err is null');
       assert.equal(data.limit, 2);
     });
+  }
+  ,'JSONStringify': function(beforeExit, assert)
+  {
+    var hoge = {hoge: 1};
+    assert.equal(Redmine.JSONStringify(hoge), '{"hoge":1}'); // plain JSON
+
+    var hoge = {hoge: 'JSON with "escape string"'};
+    assert.equal(Redmine.JSONStringify(hoge), '{"hoge":"JSON with \\\"escape string\\\""}');
+
+
+    var hoge = {hoge: 'JSON with 日本語'};
+    var converted = Redmine.JSONStringify(hoge);
+    assert.equal(converted, '{"hoge":"JSON with \\u65e5\\u672c\\u8a9e"}');
+    assert.eql(JSON.parse(converted), hoge); // invertible
   }
 };
